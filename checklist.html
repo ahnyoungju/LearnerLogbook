@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Learner Log Book</title>
+  <link rel="stylesheet" href="themes/Learner.min.css" />
+  <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <link rel="stylesheet" href="css/learner.css" />
+
+</head>
+
+<body>
+  <div data-role="header" data-position="fixed">
+  	<a href="#popupMenu" data-rel="popup" data-transition="slideup" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bars ui-btn-icon-notext ui-btn-inline ui-nodisc-icon ui-alt-icon " id="nav-icon"></a><h1>Learner Checklist</h1>
+  </div>
+  <div data-role="main" class="ui-content">
+    <div data-role="fieldcontain">
+      <input type="checkbox" name="chk01" id="chk01" class="custom" />
+      <label for="chk01">Have turned 18.</label>
+    </div>
+    <i>Drivers aged 21 and over must complete the same tests, but do not need to present the Learner Log Book.</i>
+    <div data-role="fieldcontain">
+      <input type="checkbox" name="chk02" id="chk02" class="custom" />
+      <label for="chk02">Have held a learner permit for a continuous period of at least 12 months.</label>
+    </div>
+    <div data-role="fieldcontain">
+      <input type="checkbox" name="chk03" id="chk03" class="custom" />
+      <label for="chk03">Not be disqualified from driving in Victoria, Australia or overseas.</label>
+    </div>
+    <div data-role="fieldcontain">
+      <input type="checkbox" name="chk04" id="chk04" class="custom" />
+      <label for="chk04">Have contacted VicRoads if you have a medical condition that could affect your driving.</label>
+    </div>
+    <div data-role="fieldcontain">
+      <input type="checkbox" name="chk05" id="chk05" class="custom" />
+      <label for="chk05">Pass a computerised Hazard Perception Test before a on-road drive test can be conducted.</label>
+    </div>
+    <div data-role="fieldcontain">
+      <input type="checkbox" name="chk06" id="chk06" class="custom" />
+      <label for="chk06">Present the Learner Log Book which correctly records completion of at least 120 hours of on-road supervised driving practice (including at least 20 hours at night),  with each entry signed. </label>
+    </div>
+    <div data-role="fieldcontain">
+      <input type="checkbox" name="chk07" id="chk07" class="custom" />
+      <label for="chk07">Produce the Declaration of Learner Log Book Completion in the Learner Log Book signed by both the applicant and a supervising driver. </label>
+    </div>
+    <div data-role="fieldcontain">
+      <input type="checkbox" name="chk08" id="chk08" class="custom" />
+      <label for="chk08">Produce the List of Supervising Drivers in the Learner Log Book completed and signed by all supervising drivers, including driving instructors. Signature(s) in the List of Supervising Drivers and Declaration of Learner Log Book Completion must be exactly the same as learner log entries. </label>
+    </div>
+    <div data-role="fieldcontain">
+      <input type="checkbox" name="chk09" id="chk09" class="custom" />
+      <label for="chk09">Take your learner permit card to the drive test.</label>
+    </div>
+    <div data-role="fieldcontain">
+      <input type="checkbox" name="chk10" id="chk10" class="custom" />
+      <label for="chk10">Pass an on-road drive test.</label>
+    </div>
+  </div>
+  <div data-role="footer" data-position="fixed" data-theme="c">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="index.html" rel="external" data-icon="home">Home</a></li>
+        <li><a href="Register.html" rel="external" data-icon="user">Register</a></li>
+        <li><a href="logbook.html" rel="external" data-icon="edit">Log Book</a></li>
+        <li><a href="status.html" rel="external" data-icon="bullets">Status</a></li>
+        <li><a href="#" data-icon="info">Info</a></li>
+      </ul>
+    </div>
+	</div>
+  <div data-role="popup" id="popupMenu" data-theme="e">
+    <ul data-role="listview" data-inset="true" style="min-width:210px;">
+      <li data-role="list-divider">Menu</li>
+      <li><a href="index.html" rel="external">Home</a></li>
+      <li><a href="Register.html" rel="external">Register</a></li>
+      <li><a href="logbook.html" rel="external">Log Book</a></li>
+      <li><a href="status.html" rel="external">Status</a></li>
+      <li><a href="login.html" rel="external" data-rel="dialog" data-transition="pop">Logout</a></li>
+    </ul>
+  </div>
+</body>
+</html>

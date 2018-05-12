@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Learner Log Book</title>
+  <link rel="stylesheet" href="themes/Learner.min.css" />
+  <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <script src="js/Vehicle.js"></script>
+</head>
+
+<body>
+  <div data-role="page" data-dialog="true">
+  <div data-role="header" data-theme="b">
+  	<h1>Registration-Vehicle</h1>
+  </div>
+  <div data-role="main" class="ui-content">
+    <h2>Register Vehicle Details</h2>
+    <div data-role="fieldcontain">
+      <label for="txtRego">Registration Number of Car: </label>
+      <input type="text" id="txtRego" name="txtRego" />
+    </div>
+    <div data-role="fieldcontain">
+      <fieldset data-role="controlgroup" data-type="horizontal">
+      <legend>Transmission:</legend>
+      <input name="rdoTrans" id="rdoTransAuto" value="Auto" checked="checked" type="radio">
+      <label for="rdoTransAuto">Auto</label>
+      <input name="rdoTrans" id="rdoTransManual" value="Manual"  type="radio">
+      <label for="rdoTransManual">Manual</label>
+      </fieldset>
+    </div>
+    <div data-role="fieldcontain">
+      <label for="txtMake">Make: </label>
+      <input type="text" id="txtMake" name="txtMake" />
+    </div>
+    <div data-role="fieldcontain">
+      <label for="txtModel">Model: </label>
+      <input type="text" id="txtModel" name="txtModel" />
+    </div>
+    <div data-role="fieldcontain" id="error">
+      <label for="txtMsg">&nbsp;</label>
+      <p id="txtMsg"></p>
+    </div>
+    <div data-role="fieldcontain">
+      <label>&nbsp;</label>
+      <a class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-edit  ui-btn-icon-left"  id="registerVehicle">Register</a>
+      <a class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-edit  ui-btn-icon-left"  id="saveVehicle">Save</a>
+      <a class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-refresh  ui-btn-icon-left" data-transition="pop">Start Again</a>
+    </div>
+  </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Learner Log Book</title>
+  <link rel="stylesheet" href="themes/Learner.min.css" />
+  <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <link rel="stylesheet" href="css/learner.css" />
+
+  <script>
+  $(document).ready( function() {
+
+  });
+  </script>
+</head>
+
+<body>
+  <div data-role="header" data-position="fixed" data-theme="c">
+  	<a href="#popupMenu" data-rel="popup" data-transition="slideup" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bars ui-btn-icon-notext ui-btn-inline ui-nodisc-icon ui-alt-icon" id="nav-icon"></a><h1>Learner Log Book</h1>
+  </div>
+  <div data-role="main" class="ui-content" data-theme="c">
+    <i>Enter log book:</i>
+    <div data-role="fieldcontain">
+      <label for="txtLearner">Learner Infomation:</label>
+      <input type="text" id="txtLearner" name="txtLearner" value="Huiyoung Chung (L01004)" />
+    </div>
+    <div data-role="fieldcontain">
+      <label for="selSupervisor">Supervisor Information:</label>
+      <select name="selSupervisor" id="selSupervisor">
+         <option value="Youngju Ahn">Youngju Ahn (001234567)</option>
+         <option value="Chungbo Chung">Chungbo Chung (0012345678)</option>
+      </select>
+    </div>
+    <div data-role="fieldcontain">
+      <label for="selCar">Car Details:</label>
+      <select name="selCar" id="selCar">
+         <option value="VIC-123">VIC-123 (Toyota-Corolla)</option>
+         <option value="VIC-456">VIC-456 (Audi-La Crosse)</option>
+      </select>
+    </div>
+    <div data-role="fieldcontain">
+      <label for="txtStartDateTime">Start Date and Time:</label>
+      <input type="datetime-local" id="txtStartDateTime" name="txtStartDateTime" />
+    </div>
+    <div data-role="fieldcontain">
+      <label for="txtFinishDateTime">Finish Date and Time:</label>
+      <input type="datetime-local" id="txtFinishDateTime" name="txtFinishDateTime" />
+    </div>
+    <div data-role="fieldcontain">
+      <label for="txtStartOdometer">Start Odometer:</label>
+      <input type="number" id="txtStartOdometer" name="txtStartOdometer" />
+    </div>
+    <div data-role="fieldcontain">
+      <label for="txtFinishOdometer">Finish Odometer Time:</label>
+      <input type="number" id="txtFinishOdometer" name="txtFinishOdometer" />
+    </div>
+    <div data-role="fieldcontain">
+      <label>Practice:</label>
+
+      <div data-role="tabs" id="tabs"  data-theme="c">
+        <!-- navbar acts as buttons for tabs -->
+        <div data-role="navbar">
+          <ul>
+            <li><a href="#parkingTraffic" data-ajax="false">Parking and Traffic</a></li>
+            <li><a href="#weatherLight" data-ajax="false">Weather And Light</a></li>
+            <li><a href="#road" data-ajax="false">Road</a></li>
+          </ul>
+        </div>
+        <div id="parkingTraffic" class="ui-body-d ui-content">
+          <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup">
+              <legend>Parking:</legend>
+              <input type="checkbox" name="chkParking" id="chkParking" class="custom" />
+              <label for="chkParking">Parking pratice</label>
+            </fieldset>
+          </div>
+          <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup">
+              <legend>Traffic:</legend>
+              <input type="checkbox" name="chkTLight" id="chkTLight" class="custom" value="Traffic-Light"/>
+              <label for="chkTLight">Light</label>
+              <input type="checkbox" name="chkTModerate" id="chkTModerate" class="custom" value="Traffic-Moderate" />
+              <label for="chkTModerate">Moderate</label>
+              <input type="checkbox" name="chkHeavy" id="chkHeavy" class="custom" value="Traffic-Heavy" />
+              <label for="chkHeavy">Heavy</label>
+            </fieldset>
+          </div>
+        </div>
+        <div id="weatherLight">
+          <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup">
+              <legend>Weather:</legend>
+              <input type="checkbox" name="chkWDry" id="chkWDry" class="custom" value="Weather-Dry"/>
+              <label for="chkWDry">Dry</label>
+              <input type="checkbox" name="chkWWet" id="chkWWet" class="custom" value="Weather-Wet" />
+              <label for="chkWWet">Wet</label>
+            </fieldset>
+          </div>
+          <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup">
+              <legend>Light:</legend>
+              <input type="checkbox" name="chkLDay" id="chkLDay" class="custom" value="Light-Day"/>
+              <label for="chkLDay">Day</label>
+              <input type="checkbox" name="chkLDawn" id="chkLDawn" class="custom" value="Light-DawnDusk"/>
+              <label for="chkLDawn">Dawn/Dusk</label>
+              <input type="checkbox" name="chkLNight" id="chkLNight" class="custom" value="Light-Night"/>
+              <label for="chkLNight">Night</label>
+            </fieldset>
+          </div>
+        </div>
+        <div id="road">
+          <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup">
+              <legend>Road:</legend>
+              <input type="checkbox" name="chkRLocal" id="chkRLocal" class="custom" value="Road-Local"/>
+              <label for="chkRLocal">Local St</label>
+              <input type="checkbox" name="chkRMain" id="chkRMain" class="custom" value="Road-Local"/>
+              <label for="chkRMain">Main Rd</label>
+              <input type="checkbox" name="chkRCity" id="chkRCity" class="custom" value="Road-City"/>
+              <label for="chkRCity">Inner City</label>
+              <input type="checkbox" name="chkRFreeway" id="chkRFreeway" class="custom" value="Road-Freeway"/>
+              <label for="chkRFreeway">Freeway</label>
+              <input type="checkbox" name="chkRRuralH" id="chkRRuralH" class="custom" value="Road-RuralH"/>
+              <label for="chkRRural">Rural Highway</label>
+              <input type="checkbox" name="chkRRuralO" id="chkRRuralO" class="custom" value="Road-RuralO"/>
+              <label for="chkRRuralO">Rural Other</label>
+              <input type="checkbox" name="chkRGravel" id="chkRGravel" class="custom" value="Road-Gravel"/>
+              <label for="chkRGravel">Gravel</label>
+            </fieldset>
+          </div>
+        </div> <!-- end of road -->
+      </div> <!-- end of tab -->
+      <div data-role="fieldcontain">
+        <label>&nbsp;</label>
+        <a class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-edit  ui-btn-icon-left" href="Register.html" rel="external">Register</a>
+        <a class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-refresh  ui-btn-icon-left">Start Again</a>
+      </div>
+    </div>
+</div>
+<div data-role="footer" data-position="fixed"  data-theme="c">
+  <div data-role="navbar">
+    <ul>
+      <li><a href="index.html" rel="external" data-icon="home">Home</a></li>
+      <li><a href="Register.html" rel="external" data-icon="user">Register</a></li>
+      <li><a href="logbook.html" rel="external" data-icon="edit">Log Book</a></li>
+      <li><a href="Summary.html" rel="external" data-icon="bullets">Summary</a></li>
+      <li><a href="#" data-icon="info">Info</a></li>
+    </ul>
+  </div>
+</div>
+<!-- <div data-role="popup" id="popupMenu" data-theme="a"> -->
+<div data-role="panel" id="popupMenu" data-theme="e">
+  <ul data-role="listview" data-inset="true" style="min-width:210px;">
+    <li data-role="list-divider">Menu</li>
+    <li><a href="index.html" rel="external">Home</a></li>
+    <li><a href="Register.html" rel="external">Register</a></li>
+    <li><a href="logbook.html" rel="external">Log Book</a></li>
+    <li><a href="Summary.html" rel="external">Summary</a></li>
+    <li><a href="login.html" rel="external" data-rel="dialog" data-transition="pop">Logout</a></li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Learner Log Book</title>
+  <link rel="stylesheet" href="themes/Learner.min.css" />
+  <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <link rel="stylesheet" href="css/learner.css" />
+  <link rel="stylesheet" href="css/register.css" />
+
+  <script src="js/dbConn.js"></script>
+  <script src="js/utilities.js"></script>
+  <script src="js/learnerSQL.js"></script>
+  <script src="js/register.js"></script>
+
+</head>
+
+<body>
+  <div data-role="header" data-position="fixed" data-theme="c">
+  	<a href="#popupMenu" data-rel="popup" data-transition="slideup" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bars ui-btn-icon-notext ui-btn-inline ui-nodisc-icon ui-alt-icon" id="nav-icon"></a><h1>Registration</h1>
+  </div>
+  <div data-role="main" class="ui-content">
+    <ul data-role="listview" data-inset="true">
+      <li data-role="collapsible" data-collapsed="false" data-iconpos="right" data-inset="false"  data-theme="c">
+        <h2>Learner</h2>
+        <ul data-role="listview" data-theme="d" id="forLearner">
+        </ul>
+      </li>
+      <li data-role="collapsible" data-iconpos="right" data-inset="false"  data-theme="c">
+        <h2>Supervisor</h2>
+        <ul data-role="listview" data-theme="d" id="forSupervisor">
+          <li><a href="registerSupervisor.html" rel="external" data-rel="popup" data-transition="pop" class="ui-btn ui-shadow ui-corner-all ui-icon-edit  ui-btn-icon-right">Youngju Ahn (001234567)</a></li>
+          <li><a href="registerSupervisor.html" rel="external" data-rel="popup" data-transition="pop" class="ui-btn ui-shadow ui-corner-all ui-icon-edit  ui-btn-icon-right">Chungbo Chung (0012345678)</a></li>
+          <li><a href="registerSupervisor.html" rel="external" data-rel="popup" data-transition="pop" class="ui-btn ui-shadow ui-corner-all ui-icon-plus  ui-btn-icon-right">Add new supervisor</a></li>
+        </ul>
+      </li>
+      <li data-role="collapsible" data-iconpos="right" data-inset="false"  data-theme="c">
+        <h2>Vehicle</h2>
+        <ul data-role="listview" data-theme="d">
+          <li><a href="registerVehicle.html" rel="external" data-rel="popup" data-transition="pop" class="ui-btn ui-shadow ui-corner-all ui-icon-edit ui-btn-icon-right">VIC-123 (Toyota-Corolla)</a></li>
+          <li><a href="registerVehicle.html" rel="external" data-rel="popup" data-transition="pop" class="ui-btn ui-shadow ui-corner-all ui-icon-edit ui-btn-icon-right">VIC-456 (Audi-La Crosse)</a></li>
+          <li><a href="registerVehicle.html" rel="external" data-rel="popup" data-transition="pop" class="ui-btn ui-shadow ui-corner-all ui-icon-plus  ui-btn-icon-right">Add new vehicle</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div data-role="footer" data-position="fixed" data-theme="c">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="index.html" rel="external" data-icon="home">Home</a></li>
+        <li><a href="register.html" rel="external" data-icon="user">Register</a></li>
+        <li><a href="logbook.html" rel="external" data-icon="edit">Log Book</a></li>
+        <li><a href="summary.html" rel="external" data-icon="bullets">Summary</a></li>
+        <li><a href="#" data-icon="info">Info</a></li>
+      </ul>
+    </div>
+	</div>
+  <div data-role="panel" id="popupMenu" data-theme="e">
+    <ul data-role="listview" data-inset="true" style="min-width:210px;">
+      <li data-role="list-divider">Menu</li>
+      <li><a href="index.html" rel="external">Home</a></li>
+      <li><a href="register.html" rel="external">Register</a></li>
+      <li><a href="logbook.html" rel="external">Log Book</a></li>
+      <li><a href="summary.html" rel="external">Summary</a></li>
+      <li><a href="login.html" rel="external" data-rel="dialog" data-transition="pop">Logout</a></li>
+    </ul>
+  </div>
+</body>
+</html>

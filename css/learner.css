@@ -1,0 +1,78 @@
+@charset "utf8";
+body {
+  font-family: Verdana, Georgia, Arial, sans-serif;
+}
+h1,h2,h3 {
+  font-family: Verdana, Georgia, sans-serif;
+  display:block;
+  margin:auto;
+  text-align:center;
+  font-size:1.1em;
+}
+.center {
+  align-items:center;
+  display:block;
+  justify-content:center;
+  margin:auto;
+  text-align:center;
+}
+.vertical-center {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+table {
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #e6f3ff;
+}
+
+th {
+  background-color: #339cff;
+  color:#ffffff;
+  font-weight:normal;
+}
+.ui-table th {
+    font-weight: normal;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #e6f3ff;
+}
+
+#nav-icon {
+  background-color: white !important;
+  border-color: white !important;
+  -webkit-box-shadow: 0 0 0 !important;
+  box-shadow: 0 0 0 !important;
+}
+
+#welcome {
+  /* color: #333;
+  text-shadow: 0px 2px 3px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
+  /* text-shadow: -1px -1px 0px #555; */
+  font-size:1.5em;
+  /* opacity: 0.4; */
+  color: black;
+  -webkit-text-fill-color: #4da9ff; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: #004280;
+  text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+}
+
+#error {
+  color:red;
+  display:none;
+}

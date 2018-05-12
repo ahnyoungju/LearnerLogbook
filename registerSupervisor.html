@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Learner Log Book</title>
+  <link rel="stylesheet" href="themes/Learner.min.css" />
+  <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+
+<body>
+  <div data-role="page" data-dialog="true" >
+  <div data-role="header" data-theme="b">
+  	<h1>Registration-Supervisor</h1>
+  </div>
+  <div data-role="main" class="ui-content">
+    <h2>Register Supervisor Details</h2>
+    <i>* Supervising Driver</i>
+    <div data-role="fieldcontain">
+      <label for="txtFirst">First Name: </label>
+      <input type="text" id="txtFirst" name="txtFirst" />
+    </div>
+    <div data-role="fieldcontain">
+      <label for="txtLast">Last Name: </label>
+      <input type="text" id="txtLast" name="txtLast" />
+    </div>
+    <i>* Supervising Driver</i>
+    <div data-role="fieldcontain">
+      <label for="txtLicenceNo">Licence No<br />Instructor No: </label>
+      <input type="text" id="txtLicenceNo" name="txtLicenceNo" />
+    </div>
+    <div data-role="fieldcontain">
+      <label for="txtExpiryDate">Licence Expiry Date: </label>
+      <input type="date" id="txtExpiryDate" name="txtExpiryDate" />
+    </div>
+    <div data-role="fieldcontain">
+      <label for="txtDOB">Date Of Birth: </label>
+      <input type="date" id="txtDOB" name="txtDOB" />
+    </div>
+    <i>* Business Hours Only</i>
+    <div data-role="fieldcontain">
+      <label for="txtPhone">Phone: </label>
+      <input type="text" id="txtPhone" name="txtPhone" />
+    </div>
+    <div data-role="fieldcontain">
+      <label for="txtSignature">Signature: </label>
+      <textarea id="txtSignature" name="txtSignature"></textarea>
+    </div>
+    <div data-role="fieldcontain">
+      <label>&nbsp;</label>
+      <a class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-edit  ui-btn-icon-left" href="register.html" rel="external">Register</a>
+      <a class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-refresh  ui-btn-icon-left" data-transition="pop">Start Again</a>
+    </div>
+  </div>
+  </div>
+</body>
+</html>
