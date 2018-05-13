@@ -9,9 +9,9 @@ var insertLearnerSQL = "INSERT into tblLearner ";
 insertLearnerSQL += "( fldPermitNo, fldFirstname, fldLastname, fldDOB, fldPhone, fldPermitDate )";
 insertLearnerSQL += " VALUES (?,?,?,?,?,?);";
 
-var updateLearnerTableSQL = "UPDATE tblLearner SET ";
-updateLearnerTableSQL += "fldPermitNo=?, fldFirstname=?, fldLastname=?, fldDOB=?, fldPhone=?, fldPermitDate=? ";
-updateLearnerTableSQL += " WHERE fldPermitNo=?;";
+var updateLearnerSQL = "UPDATE tblLearner SET ";
+updateLearnerSQL += "fldPermitNo=?, fldFirstname=?, fldLastname=?, fldDOB=?, fldPhone=?, fldPermitDate=? ";
+updateLearnerSQL += " WHERE fldPermitNo=?;";
 
 var queryLearnerSQL = "SELECT * FROM tblLearner ";
 queryLearnerSQL += " WHERE fldPermitNo=?;";
@@ -27,12 +27,14 @@ var insertVehicleSQL = "INSERT into tblVehicle ";
 insertVehicleSQL += "( fldRego, fldTransmission, fldMake, fldModel )";
 insertVehicleSQL += " VALUES (?,?,?,?);";
 
-var updateVehicleTableSQL = "UPDATE tblVehicle SET ";
-updateVehicleTableSQL += " fldRego=?, fldTransmission=?, fldMake=?, fldModel=? ";
-updateVehicleTableSQL += " WHERE fldRego=?;";
+var updateVehicleSQL = "UPDATE tblVehicle SET ";
+updateVehicleSQL += " fldRego=?, fldTransmission=?, fldMake=?, fldModel=? ";
+updateVehicleSQL += " WHERE fldRego=?;";
 
 var queryVehicleSQL = "SELECT * FROM tblVehicle ";
 queryVehicleSQL += " WHERE fldRego=?;";
+
+var queryVehicleSQL2 = "SELECT * FROM tblVehicle ";
 
 /**
  * Table Name: Supervisor
