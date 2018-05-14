@@ -3,13 +3,18 @@
 <head>
   <meta charset="utf-8">
   <title>Learner Log Book</title>
+
+  <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
   <link rel="stylesheet" href="themes/Learner.min.css" />
   <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
-  <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
   <script src="jQuery/jquery-1.11.2.js"></script>
   <script src="jQuery/jquery.mobile-1.4.5.min.js"></script>
   <link rel="stylesheet" href="css/learner.css" />
-  
+
+  <script src="js/dbConn.js"></script>
+  <script src="js/utilities.js"></script>
+  <script src="js/learnerSQL.js"></script>
+  <script src="js/registerSupervisor.js"></script>
 </head>
 
 <body>
@@ -37,22 +42,23 @@
       <label for="txtExpiryDate">Licence Expiry Date: </label>
       <input type="date" id="txtExpiryDate" name="txtExpiryDate" />
     </div>
-    <div data-role="fieldcontain">
-      <label for="txtDOB">Date Of Birth: </label>
-      <input type="date" id="txtDOB" name="txtDOB" />
-    </div>
     <i>* Business Hours Only</i>
     <div data-role="fieldcontain">
       <label for="txtPhone">Phone: </label>
       <input type="text" id="txtPhone" name="txtPhone" />
     </div>
-    <div data-role="fieldcontain">
+    <!-- <div data-role="fieldcontain">
       <label for="txtSignature">Signature: </label>
       <textarea id="txtSignature" name="txtSignature"></textarea>
+    </div> -->
+    <div data-role="fieldcontain" id="error">
+      <label for="txtMsg">&nbsp;</label>
+      <p id="txtMsg"></p>
     </div>
     <div data-role="fieldcontain">
       <label>&nbsp;</label>
-      <a class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-edit  ui-btn-icon-left" href="register.html" rel="external">Register</a>
+      <a class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-edit  ui-btn-icon-left" id="registerSupervisor">Register</a>
+      <a class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-edit  ui-btn-icon-left" id="saveSupervisor">Save</a>
       <a class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-refresh  ui-btn-icon-left" data-transition="pop">Start Again</a>
     </div>
   </div>

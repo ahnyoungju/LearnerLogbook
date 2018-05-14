@@ -14,7 +14,7 @@ var onDeviceReady = function() {
     else {
       db = window.openDatabase(shortName, version, displayName, maxSize);
 
-      db.transaction(readDB, onError, showLog("openDatabase"));
+      db.transaction(readDB, onError, showLog("readDB"));
     } // end else
   }
   catch(err) {

@@ -3,42 +3,36 @@
 <head>
   <meta charset="utf-8">
   <title>Learner Log Book</title>
+  <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
   <link rel="stylesheet" href="themes/Learner.min.css" />
   <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
-  <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+
   <script src="jQuery/jquery-1.11.2.js"></script>
   <script src="jQuery/jquery.mobile-1.4.5.min.js"></script>
   <link rel="stylesheet" href="css/learner.css" />
 
-  <script>
-  $(document).ready( function() {
-
-  });
-  </script>
+  <script src="js/dbConn.js"></script>
+  <script src="js/utilities.js"></script>
+  <script src="js/learnerSQL.js"></script>
+  <script src="js/logbook.js"></script>
 </head>
 
 <body>
   <div data-role="header" data-position="fixed" data-theme="c">
-  	<a href="#popupMenu" data-rel="popup" data-transition="slideup" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bars ui-btn-icon-notext ui-btn-inline ui-nodisc-icon ui-alt-icon" id="nav-icon"></a><h1>Learner Log Book</h1>
+  	<a href="#popupMenu" data-rel="popup" data-transition="slideup" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bars ui-btn-icon-notext ui-btn-inline ui-nodisc-icon ui-alt-icon" id="nav-icon"></a><h1><sapn id="learnerName"></sapn> Log Book</h1>
   </div>
   <div data-role="main" class="ui-content" data-theme="c">
     <i>Enter log book:</i>
     <div data-role="fieldcontain">
-      <label for="txtLearner">Learner Infomation:</label>
-      <input type="text" id="txtLearner" name="txtLearner" value="Huiyoung Chung (L01004)" />
-    </div>
-    <div data-role="fieldcontain">
-      <label for="selSupervisor">Supervisor Information:</label>
+      <label for="selSupervisor">Supervisor:</label>
       <select name="selSupervisor" id="selSupervisor">
-         <option value="Youngju Ahn">Youngju Ahn (001234567)</option>
-         <option value="Chungbo Chung">Chungbo Chung (0012345678)</option>
+
       </select>
     </div>
     <div data-role="fieldcontain">
-      <label for="selCar">Car Details:</label>
+      <label for="selCar">Vehicle:</label>
       <select name="selCar" id="selCar">
-         <option value="VIC-123">VIC-123 (Toyota-Corolla)</option>
-         <option value="VIC-456">VIC-456 (Audi-La Crosse)</option>
+
       </select>
     </div>
     <div data-role="fieldcontain">
@@ -57,19 +51,18 @@
       <label for="txtFinishOdometer">Finish Odometer Time:</label>
       <input type="number" id="txtFinishOdometer" name="txtFinishOdometer" />
     </div>
-    <div data-role="fieldcontain">
+    <div data-role="fieldcontain" data-theme="c">
       <label>Practice:</label>
-
-      <div data-role="tabs" id="tabs"  data-theme="c">
+      <div data-role="tabs" id="tabs"  data-theme="e">
         <!-- navbar acts as buttons for tabs -->
-        <div data-role="navbar">
+        <div data-role="navbar" data-theme="e">
           <ul>
             <li><a href="#parkingTraffic" data-ajax="false">Parking and Traffic</a></li>
             <li><a href="#weatherLight" data-ajax="false">Weather And Light</a></li>
             <li><a href="#road" data-ajax="false">Road</a></li>
           </ul>
         </div>
-        <div id="parkingTraffic" class="ui-body-d ui-content">
+        <div id="parkingTraffic">
           <div data-role="fieldcontain">
             <fieldset data-role="controlgroup">
               <legend>Parking:</legend>
@@ -135,7 +128,7 @@
       </div> <!-- end of tab -->
       <div data-role="fieldcontain">
         <label>&nbsp;</label>
-        <a class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-edit  ui-btn-icon-left" href="Register.html" rel="external">Register</a>
+        <a class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-edit  ui-btn-icon-left" id="register">Register</a>
         <a class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-refresh  ui-btn-icon-left">Start Again</a>
       </div>
     </div>

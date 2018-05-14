@@ -3,6 +3,14 @@ $(document).ready(function(e) {
   var permitNo = getUrlVars()["PermitNo"];
   $("#error").hide();
 
+  // Date format setting
+  // $("#txtPermitDate").datepicker({
+  //   dateFormat: "dd-mm-yy"
+  // });
+  // $("#txtDOB").datepicker({
+  //   dateFormat: "dd-mm-yy"
+  // });
+
   document.addEventListener("deviceready", onDeviceReady(), false);
 
   if( permitNo != null ) {
@@ -95,8 +103,6 @@ var updateLearner = function(oldPermitNo) {
     db.transaction( function(trans) {
       trans.executeSql(updateLearnerSQL, [permitNo, first,last,dob,phone,permitDate,oldPermitNo]);
     }, onError, openURL("register.html"));
-
-		readLearner(permitNo);
   }
 };
 

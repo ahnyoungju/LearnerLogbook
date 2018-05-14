@@ -3,7 +3,7 @@
  */
 var createLearnerTable = "CREATE TABLE IF NOT EXISTS tblLearner ";
 createLearnerTable += " ( fldPermitNo TEXT PRIMARY KEY, fldFirstname TEXT, fldLastname TEXT, ";
-createLearnerTable += " fldDOB TEXT, fldPhone TEXT, fldPermitDate TEXT );";
+createLearnerTable += " fldDOB DATETIME, fldPhone TEXT, fldPermitDate DATETIME );";
 
 var insertLearnerSQL = "INSERT into tblLearner ";
 insertLearnerSQL += "( fldPermitNo, fldFirstname, fldLastname, fldDOB, fldPhone, fldPermitDate )";
@@ -41,7 +41,7 @@ var queryVehicleSQL2 = "SELECT * FROM tblVehicle ";
  */
 var createSupervisorTable = "CREATE TABLE IF NOT EXISTS tblSupervisor ";
 createSupervisorTable += " ( fldLicenceNo TEXT PRIMARY KEY, fldFirstname TEXT, fldLastname TEXT, ";
-createSupervisorTable += " fldPhone TEXT, fldLicenceExpiry TEXT );";
+createSupervisorTable += " fldPhone TEXT, fldLicenceExpiry DATETIME );";
 
 var insertSupervisorSQL = "INSERT into tblSupervisor ";
 insertSupervisorSQL += "( fldLicenceNo, fldFirstname, fldLastname, fldPhone, fldLicenceExpiry )";
@@ -61,16 +61,16 @@ var querySupervisorSQL2 = "SELECT * FROM tblSupervisor ";
  */
 var createLogbookTable = "CREATE TABLE IF NOT EXISTS tblLogbook ";
 createLogbookTable += " ( fldId INTEGER PRIMARY KEY AUTOINCREMENT, fldPermitNo TEXT, fldLicenceNo TEXT, ";
-createLogbookTable += " fldRego TEXT, fldStartDateTime TEXT,";
-createLogbookTable += " fldFinishDateTime TEXT, fldStartOdometer INTEGER, fldFinishOdometer INTEGER, ";
+createLogbookTable += " fldRego TEXT, fldStartDateTime DATETIME,";
+createLogbookTable += " fldFinishDateTime DATETIME, fldStartOdometer INTEGER, fldFinishOdometer INTEGER, ";
 createLogbookTable += " fldParking INTEGER, fldTraffic INTEGER, fldWeather INTEGER, ";
 createLogbookTable += " fldRoad INTEGER, fldLight INTEGER, fldSignature TEXT );";
 
 var insertLogbookSQL = "INSERT into tblLogbook ";
 insertLogbookSQL += "(fldPermitNo,fldLicenceNo,fldRego,fldStartDateTime";
 insertLogbookSQL += ",fldFinishDateTime,fldStartOdometer,fldFinishOdometer";
-insertLogbookSQL += ",fldParking,fldTraffic,fldWeather,fldRoad,fldLight,fldSignature)";
-insertLogbookSQL += " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?);";
+insertLogbookSQL += ",fldParking,fldTraffic,fldWeather,fldRoad,fldLight)";
+insertLogbookSQL += " VALUES (?,?,?,?,?,?,?,?,?,?,?,?);";
 
 var updateLogbookSQL = "UPDATE tblLogbook SET ";
 updateLogbookSQL += " fldPermitNo=?, fldLicenceNo=?, fldRego=?, fldStartDateTime=?, ";
