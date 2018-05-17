@@ -18,7 +18,7 @@ $(document).ready(function(e) {
   document.addEventListener("deviceready", onDeviceReady(), false);
 
   $("#register").on("click", function() {
-    addLogbook();
+    checkLogbook();
   });
 });
 
@@ -108,25 +108,37 @@ var readDB = function(trans) {
   });   // end db transaction
 } // end readDB
 
-var addLogbook = function() {
-  var check = checkLogbook();
+var checkLogbook = function() {
+  var check = checkDetails();
 
-  if(check) {
-    db.transaction( function(trans) {
-      trans.executeSql(insertLogbookSQL,[permitNo, licenceNo, regoNo,
-      startDate, endDate, startOdometer, endOdometer,
-      parking, traffic, weather, road, light] );
-    //}, onError, openURL("summary.html"));
-    }, onError );
-  }
+  // $("confirmLogbook.html").dialog();
+  
+  // if( check ) {
+  //   // Confirm logbook details
+  //   var addLogbook = function() {
+  //
+  //     db.transaction( function(trans) {
+  //         trans.executeSql(insertLogbookSQL,[permitNo, licenceNo, regoNo,
+  //         startDate, endDate, startOdometer, endOdometer,
+  //         parking, traffic, weather, road, light] );
+  //       //}, onError, openURL("summary.html"));
+  //     }, onError );
+  //   }
+  //   $("confirmLogbook.html").dialog();
+  // }
+  // else {
+  //   // display error message;
+  // }
 }
 
-var checkLogbook = function() {
+
+
+var checkDetails = function() {
   licenceNo = $("#selSupervisor").val();
   regoNo = $("#selCar").val();
   startDate = $("#txtStartDateTime").val();
   //startTime = $("#txtStartDateTime").val();
-  endDate = $("#txtEndDateTime").val();
+  endDate = $("#txtFinishDateTime").val();
   //endTime = $("#txtEndDateTime").val();
   startOdometer = $("#txtStartOdometer").val();
   endOdometer = $("#txtFinishOdometer").val();

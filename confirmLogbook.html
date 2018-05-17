@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Confirm Logbook Details</title>
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="themes/Learner.min.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+
+    <script src="jQuery/jquery-1.11.2.js"></script>
+    <script src="jQuery/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="css/learner.css" />
+
+    <!-- For signature -->
+    <script src="jSignature/jSignature.min.noconflict.js"></script>
+    <script src="jSignature/jSignature.UndoButton.js"></script>
+    <script src="jSignature/jSignature.CompressorSVG.js"></script>
+    <script src="jSignature/modernizr.js"></script>
+
+    <script src="js/dbConn.js"></script>
+    <script src="js/utilities.js"></script>
+    <script src="js/learnerSQL.js"></script>
+    <script src="js/confirmLogbook.js"></script>
+
+  </head>
+  <body>
+    <div data-role="page" id="sigPage" data-dialog="true"  data-theme="c">
+      <div data-role="header" data-add-back-btn="true">
+    	  <h1>Confirm Logbook</h1>
+      </div>
+      <div data-role="main" class="ui-content">
+      	<p id="logbookDetails"></p>
+        <div id="signatureParent">
+          <div id="signature"></div>
+        </div>
+        <div class="center">
+          <a class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-edit  ui-btn-icon-left" id="confirmLogbook">Submit</a>
+          <a class="ui-btn ui-btn-inline ui-corner-all ui-shadow ui-icon-refresh  ui-btn-icon-left" id="clearSig" >Clear</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

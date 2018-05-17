@@ -76,3 +76,19 @@ tr:nth-child(even) {
   color:red;
   display:none;
 }
+
+/*This is the div within which the signature canvas is fitted*/
+#signature {
+  border: 2px dotted black;
+  background-color:lightgrey;
+}
+
+#signatureParent {
+  color:darkblue;
+  background-color:darkgrey;
+  /* max-width:600px;
+  max-height:500px; */
+  padding:20px;
+  margin-top:1em;
+  margin-bottom:1em;
+}
