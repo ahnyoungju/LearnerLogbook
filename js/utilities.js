@@ -34,3 +34,7 @@ function getUrlVars() {
 function openURL( url ) {
   window.open(url, "_self");
 }
+
+var showLog = function(name) {
+	console.log("Success: " + name);
+}

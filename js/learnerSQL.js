@@ -61,8 +61,8 @@ var querySupervisorSQL2 = "SELECT * FROM tblSupervisor ";
  */
 var createLogbookTable = "CREATE TABLE IF NOT EXISTS tblLogbook ";
 createLogbookTable += " ( fldId INTEGER PRIMARY KEY AUTOINCREMENT, fldPermitNo TEXT, fldLicenceNo TEXT, ";
-createLogbookTable += " fldRego TEXT, fldStartDateTime DATETIME,";
-createLogbookTable += " fldFinishDateTime DATETIME, fldStartOdometer INTEGER, fldFinishOdometer INTEGER, ";
+createLogbookTable += " fldRego TEXT, fldStartDateTime TEXT,";
+createLogbookTable += " fldFinishDateTime TEXT, fldStartOdometer INTEGER, fldFinishOdometer INTEGER, ";
 createLogbookTable += " fldParking INTEGER, fldTraffic INTEGER, fldWeather INTEGER, ";
 createLogbookTable += " fldRoad INTEGER, fldLight INTEGER, fldSignature TEXT );";
 
@@ -73,9 +73,20 @@ insertLogbookSQL += ",fldParking,fldTraffic,fldWeather,fldRoad,fldLight)";
 insertLogbookSQL += " VALUES (?,?,?,?,?,?,?,?,?,?,?,?);";
 
 var updateLogbookSQL = "UPDATE tblLogbook SET ";
-updateLogbookSQL += " fldPermitNo=?, fldLicenceNo=?, fldRego=?, fldStartDateTime=?, ";
+updateLogbookSQL += " fldLicenceNo=?, fldRego=?, fldStartDateTime=?, ";
 updateLogbookSQL += " fldFinishDateTime=?, fldStartOdometer=? ";
 updateLogbookSQL += " WHERE fldId=?;";
 
+var updateLogbookSQL2 = "UPDATE tblLogbook SET ";
+updateLogbookSQL2 += " fldSignature=? ";
+updateLogbookSQL2 += " WHERE fldId=?;";
+
 var queryLogbookSQL = "SELECT * FROM tblLogbook ";
 queryLogbookSQL += " WHERE fldId=?;";
+
+var queryLogbookSQL2 = "SELECT * FROM tblLogbook ";
+
+var queryLogbookSQL3 = "SELECT l.fldId, s.fldFirstname, s.fldLastname, ";
+queryLogbookSQL3 += " l.fldRego, l.fldStartDateTime, l.fldFinishDateTime ";
+queryLogbookSQL3 += " FROM   tblLogbook l, tblSupervisor s ";
+queryLogbookSQL3 += " WHERE  l.fldLicenceNo = s.fldLicenceNo;"

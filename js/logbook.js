@@ -3,10 +3,10 @@ var licenceNo;
 var regoNo;
 var startDate;
 var startTime;
-var endDate;
-var endTime;
+var finishDate;
+var finishTime;
 var startOdometer;
-var endOdometer;
+var finishOdometer;
 var parking;
 var traffic;
 var light;
@@ -30,7 +30,7 @@ var onDeviceReady = function() {
       db = window.openDatabase(shortName, version, displayName, maxSize);
 
       db.transaction(readDB, onError, showLog("readDB"));
-    } // end else
+    } // finish else
   }
   catch(err) {
     alert("Error: " + err);
@@ -55,8 +55,8 @@ var readDB = function(trans) {
         console.log(user);
 
         $("#learnerName").html(user);
-      }  // end else
-    });  // end trans
+      }  // finish else
+    });  // finish trans
   });
 
   /* read Supervisor */
@@ -76,12 +76,12 @@ var readDB = function(trans) {
           optStr += "</option>";
 
           $("#selSupervisor").append(optStr);
-        } // end for
+        } // finish for
         $("#selSupervisor").find("option:first").attr("selected","selected");
         $("#selSupervisor").selectmenu("refresh", true);
-      } // end if
-    }); // end tran
-  });    // end db transaction
+      } // finish if
+    }); // finish tran
+  });    // finish db transaction
 
   /* read Vehicle */
   db.transaction(function(trans) {
@@ -100,48 +100,46 @@ var readDB = function(trans) {
           optStr += "</option>";
 
           $("#selCar").append(optStr);
-        } // end for
+        } // finish for
         $("#selCar").find("option:first").attr("selected","selected");
         $("#selCar").selectmenu("refresh", true);
-      } // end if
-    }); // end tran
-  });   // end db transaction
-} // end readDB
+      } // finish if
+    }); // finish tran
+  });   // finish db transaction
+} // finish readDB
 
 var checkLogbook = function() {
   var check = checkDetails();
 
-  // $("confirmLogbook.html").dialog();
-  
-  // if( check ) {
-  //   // Confirm logbook details
-  //   var addLogbook = function() {
-  //
-  //     db.transaction( function(trans) {
-  //         trans.executeSql(insertLogbookSQL,[permitNo, licenceNo, regoNo,
-  //         startDate, endDate, startOdometer, endOdometer,
-  //         parking, traffic, weather, road, light] );
-  //       //}, onError, openURL("summary.html"));
-  //     }, onError );
-  //   }
-  //   $("confirmLogbook.html").dialog();
-  // }
-  // else {
-  //   // display error message;
-  // }
+  if( check ) {
+    // after checking input, goes to confirmLogbook for signature
+    addLogbook();
+    // window.location.href = "confirmLogbook.html?ID=1";
+  }
+  else {
+    console.log("Error: add logbook");
+  }
 }
 
-
+var addLogbook = function() {
+  console.log( "here");
+  db.transaction( function(trans) {
+      trans.executeSql(insertLogbookSQL,[permitNo, licenceNo, regoNo,
+      startDate, finishDate, startOdometer, finishOdometer,
+      parking, traffic, weather, road, light] );
+    //}, onError, openURL("summary.html"));
+  }, onError );
+}
 
 var checkDetails = function() {
   licenceNo = $("#selSupervisor").val();
   regoNo = $("#selCar").val();
   startDate = $("#txtStartDateTime").val();
   //startTime = $("#txtStartDateTime").val();
-  endDate = $("#txtFinishDateTime").val();
+  finishDate = $("#txtFinishDateTime").val();
   //endTime = $("#txtEndDateTime").val();
   startOdometer = $("#txtStartOdometer").val();
-  endOdometer = $("#txtFinishOdometer").val();
+  finishOdometer = $("#txtFinishOdometer").val();
 
   parking = 0;
   if($("#chkParking").prop("checked"))
@@ -185,6 +183,8 @@ var checkDetails = function() {
   if($("#chkRGravel").prop("checked"))
     road += 1;
 
+  console.log( "startDate: " + startDate );
+  console.log( "finishDate: " + finishDate );
   console.log( "parking: " + parking);
   console.log( "road: " + road);
   return true;

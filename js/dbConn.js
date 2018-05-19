@@ -32,6 +32,15 @@ var onError = function(err) {
 	console.log(str);
 }
 
-var showLog = function(name) {
-	console.log("Success: " + name);
+var connectDB = function() {
+	try {
+		if( !window.openDatabase )
+      alert("This device does NOT support databases");
+    else {
+      db = window.openDatabase(shortName, version, displayName, maxSize);
+		}
+	}
+	catch(err) {
+		alert("Error: " + err);
+	}
 }
